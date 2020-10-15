@@ -67,4 +67,4 @@ Please refer to [CHANGELOG.md](CHANGELOG.md) for the latest release.
 module "my_ec2" {
   source = "git::https://github.com/zoitech/terraform-aws-ec2.git?ref=1.0.0"
 }
-```hcl
+```
