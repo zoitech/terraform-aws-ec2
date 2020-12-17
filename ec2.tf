@@ -4,6 +4,8 @@ resource "aws_instance" "instance" {
   key_name               = var.key_name
   subnet_id              = var.subnet_id
   vpc_security_group_ids = var.vpc_security_group_ids
+  user_data              = var.user_data
+  iam_instance_profile   = local.iam_instance_profile
 
   # Modifying any of the root_block_device settings other than volume_size requires resource replacement
   dynamic "root_block_device" {

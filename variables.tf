@@ -24,6 +24,24 @@ variable "vpc_security_group_ids" {
   default     = []
 }
 
+variable "user_data" {
+  type        = string
+  description = "(Optional) The user data to provide when launching the instance. Do not pass gzip-compressed data via this argument; see user_data_base64 instead."
+  default     = ""
+}
+
+variable "iam_instance_profile_name" {
+  type        = string
+  description = "(Optional, Forces new resource) The profile's name. If omitted, Terraform will assign a random, unique name."
+  default     = ""
+}
+
+variable "iam_role_name" {
+  type = string
+  description = "(Optional) The role name to include in the profile"
+  default     = ""
+}
+
 # https://github.com/hashicorp/terraform/issues/24188
 # lifecycle: Support for dynamic blocks and meta-arguments still open
 // variable "lifecycle_ignore_changes" {
